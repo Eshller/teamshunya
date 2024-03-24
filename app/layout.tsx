@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Team Shunya",
-  description: "Team Shunya Website, IIT Bombay",
+  title: "Team SHUNYA",
+  description: "Team SHUNYA Website, IIT Bombay",
 };
 
 export default function RootLayout({
