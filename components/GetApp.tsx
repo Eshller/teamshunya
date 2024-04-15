@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const GetApp = () => {
   return (
-    <section className="flexCenter w-full flex-col ">
+    <section className="flexCenter w-full flex-col" id="contact">
       <div className="get-app">
         {/* <div className="-mx-4 flex flex-wrap lg:justify-between"> */}
         {/* <div className="w-full px-4 lg:w-1/2 xl:w-6/12"> */}
@@ -82,7 +82,10 @@ const GetApp = () => {
                   Phone Number
                 </h4>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  (+62)81 414 257 9980
+                  <span className="font-semibold text-gray-200">
+                    Prabhat Sharma
+                  </span>
+                  : 9838834413
                 </p>
               </div>
               <div className="my-2">
@@ -90,7 +93,8 @@ const GetApp = () => {
                   Phone Number
                 </h4>
                 <p className="text-base text-body-color dark:text-dark-6">
-                  (+62)81 414 257 9980
+                  <span className="font-semibold text-gray-200">Ali Khan</span>:
+                  7888219496
                 </p>
               </div>
             </div>
@@ -116,7 +120,7 @@ const GetApp = () => {
                 Email Address
               </h4>
               <p className="text-base text-body-color dark:text-dark-6">
-                info@yourdomain.com
+                iitb.teamSHUNYA@gmail.com
               </p>
             </div>
           </div>
