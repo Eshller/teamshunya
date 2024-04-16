@@ -293,7 +293,7 @@ export const TEAM = [
     "profile": "/profile/varun_phadke.jpg"
   },
   {
-    "name": "Pooja Pandey",
+    "name": "Pooja Mathary",
     "linkedin": "https://www.linkedin.com/in/pooja-pandey-36297b225/",
     "insta": "https://www.instagram.com/pooja_pandey_22",
     "role": "Design Engineer",
