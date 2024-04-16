@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="max-container bg-gray-700  transition-all padding-container relative z-30 py-5">
+      <nav className="max-containertransition-all padding-container relative z-30 py-5">
         <div className="px-8 mx-auto max-w-7xl">
           <div className="flex items-center justify-between h-16">
             <div className="w-full justify-between flex items-center">
@@ -52,7 +52,7 @@ const Navbar = () => {
                     <Link
                       href={link.href}
                       key={link.key}
-                      className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+                      className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
                     >
                       {link.label}
                     </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             </div>
             <div className="flex -mr-2 md:hidden transition-all">
               <button
-                className="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
+                className="text-gray-800 hover:text-gray-600 transition-all hover:transition-all inline-flex items-center justify-center p-2 rounded-md focus:outline-none"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <svg
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <Link
                   href={link.href}
                   key={link.key}
-                  className="text-gray-300 transition-all hover:font-bold hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className=" transition-all hover:font-bold hover:text-gray-800 text-gray-50 block px-3 py-2 rounded-md text-base font-medium"
                   // className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
                 >
                   {link.label}
