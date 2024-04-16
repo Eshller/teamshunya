@@ -4,24 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-interface Props {
-  //boolean to always open ddm (for presentation)
-  forceOpen?: boolean;
-  label?: string;
-  withDivider?: boolean;
-  icon?: JSX.Element;
-  items: DDMItem[];
-  withBackground?: boolean;
-}
-
-export interface DDMItem {
-  icon?: JSX.Element;
-  label: string;
-  desc?: string;
-  link?: string;
-}
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
