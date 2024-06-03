@@ -62,7 +62,7 @@ export const NAV_LINKS = [
   { href: '/', key: 'media', label: 'Media' },
   { href: '/sponsors', key: 'sponsor', label: 'Sponsors' },
   { 
-    href: '/team', 
+    href: '/team/student', 
     key: 'team', 
     label: 'Team',
     subLinks: [
