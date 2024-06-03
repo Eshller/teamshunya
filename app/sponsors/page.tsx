@@ -35,7 +35,7 @@ const Brand = () => {
                     <TitleSponsor
                       Alt="title sponsors"
                       imgSrc="/sponsors/llyod_insulations.png"
-                      name="RelWood"
+                      name="Llyod Insulations"
                     />
                   </div>
                 </div>
