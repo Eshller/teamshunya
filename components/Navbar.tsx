@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     console.log(isOpen);
@@ -21,41 +22,42 @@ const Navbar = () => {
                 <Image src="/ts_logo.png" alt="logo" width={174} height={129} />
               </a>
               <div className="hidden md:block transition-all">
-                {/* <div className="flex items-baseline ml-10 space-x-4">
-                  <a
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    href="/#"
-                  >
-                    Home
-                  </a>
-                  <a
-                    className="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    href="/#"
-                  >
-                    Gallery
-                  </a>
-                  <a
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    href="/#"
-                  >
-                    Content
-                  </a>
-                  <a
-                    className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                    href="/#"
-                  >
-                    Contact
-                  </a>
-                </div> */}
                 <ul className="hidden h-full gap-12 lg:flex transition-all">
                   {NAV_LINKS.map((link) => (
-                    <Link
-                      href={link.href}
-                      key={link.key}
-                      className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
-                    >
-                      {link.label}
-                    </Link>
+                    <div key={link.key} className="relative">
+                      <Link
+                        href={link.href}
+                        className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
+                        onMouseEnter={() =>
+                          link.subLinks && setIsDropdownOpen(true)
+                        }
+                        onMouseLeave={() =>
+                          link.subLinks && setIsDropdownOpen(false)
+                        }
+                      >
+                        {link.label}
+                      </Link>
+                      {link.subLinks && isDropdownOpen && (
+                        <div
+                          className="absolute left-0 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5"
+                          onMouseEnter={() => setIsDropdownOpen(true)}
+                          onMouseLeave={() => setIsDropdownOpen(false)}
+                        >
+                          <ul>
+                            {link.subLinks.map((subLink) => (
+                              <li key={subLink.key}>
+                                <Link
+                                  href={subLink.href}
+                                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                >
+                                  {subLink.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </ul>
               </div>
@@ -86,14 +88,27 @@ const Navbar = () => {
           <div className="md:hidden transition-all">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {NAV_LINKS.map((link) => (
-                <Link
-                  href={link.href}
-                  key={link.key}
-                  className=" transition-all hover:font-bold hover:text-gray-800 text-gray-50 block px-3 py-2 rounded-md text-base font-medium"
-                  // className="regular-16 text-gray-50 flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold"
-                >
-                  {link.label}
-                </Link>
+                <div key={link.key}>
+                  <Link
+                    href={link.href}
+                    className="transition-all hover:font-bold hover:text-gray-800 text-gray-50 block px-3 py-2 rounded-md text-base font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                  {link.subLinks && (
+                    <div className="pl-4">
+                      {link.subLinks.map((subLink) => (
+                        <Link
+                          href={subLink.href}
+                          key={subLink.key}
+                          className="block px-3 py-2 rounded-md text-base font-medium text-gray-50 hover:text-gray-800 hover:bg-gray-100"
+                        >
+                          {subLink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -102,4 +117,5 @@ const Navbar = () => {
     </div>
   );
 };
+
 export default Navbar;
